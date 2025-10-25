@@ -17,7 +17,7 @@ const corsOptions = {
     credentials: true,
     optionsSuccessStatus: 200
 };
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
@@ -112,5 +112,6 @@ process.on('uncaughtException', (err) => {
     console.error('  Uncaught Exception:', err);
     process.exit(1);
 });
+
 
 module.exports = app;
